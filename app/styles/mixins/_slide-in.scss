@@ -1,0 +1,238 @@
+@mixin slide-in-title {
+    animation-name: slide-in-title;
+    animation-duration: .5s;
+    animation-iteration-count:1;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: slide-in-title;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-timing-function: ease-in;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// @mixin slide-in-nav {
+//     animation-name: slide-in-nav;
+//     animation-duration: .5s;
+//     animation-iteration-count:1;
+//     animation-timing-function: ease-in-out;
+//     -webkit-animation-name: slide-in-nav;
+//     -webkit-animation-iteration-count:1;
+//     -webkit-animation-duration: .5s;
+//     -webkit-animation-timing-function: ease-in;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
+@mixin slide-in-menu {
+    animation-name: slide-in-menu;
+    animation-duration: .2s;
+    animation-iteration-count:1;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: slide-in-menu;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-duration: .2s;
+    -webkit-animation-timing-function: ease-in-out;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin slide-out-menu {
+    animation-name: slide-out-menu;
+    animation-duration: .2s;
+    animation-iteration-count:1;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: slide-out-menu;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-duration: .2s;
+    -webkit-animation-timing-function: ease-in-out;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin kf-slide-in-menu {
+    @keyframes slide-in-menu {
+        0% {
+        opacity:0;
+        top:-500px;
+        }
+
+        100% {
+        opacity:1;
+        top:0px;
+        }
+    }
+
+    @-webkit-keyframes slide-in-menu {
+        0% {
+        opacity:0;
+        top:-500px;} 
+
+        100% {
+        opacity:1;
+        top:0px;
+        }
+    }
+}
+
+@mixin kf-slide-out-menu {
+    @keyframes slide-out-menu {
+        0% {
+        opacity: 1;
+        top:0px;
+        }
+
+        100% {
+        opacity:0;
+        top:-500px;
+        }
+    }    
+
+    @-webkit-keyframes slide-out-menu {
+        0% {
+        opacity:1;
+        top:0px;
+        }
+
+        100% {
+        opacity:0;
+        top:-500px;
+        }
+    }         
+}
+
+@mixin kf-slide-in-title {
+    @keyframes slide-in-title {
+        0% {
+        opacity:0;
+        left:-500px;
+        }
+
+        100% {
+        opacity:1;
+        left:0px;
+        }
+    }    
+}
+
+    @-webkit-keyframes slide-in-title {
+    0% {
+    opacity:0;
+    left:-500px;
+    }
+
+    100% {
+    opacity:1;
+    left:0px;
+    }
+}
+
+@mixin kf-slide-in-nav {
+    @keyframes slide-in-nav {
+        0% {
+        opacity:0;
+        right:-500px;
+        }   
+
+        100% {
+        opacity:1;
+        right:0px;
+        }
+    }
+}    
+
+
+    @-webkit-keyframes slide-in-nav {
+    0% {
+    opacity:0;
+    right:-500px;
+    }
+
+    100% {
+    opacity:1;
+    right:0px;
+    }
+}
+
+$duration-fastest: 0.5s;
+$duration-fast: 0.6s;
+$duration-medium: 0.7s;
+$duration-slow: 0.8s;
+$duration-slowest: 0.9s;
+
+@mixin nav-slide {
+    .slide-1 {
+        animation-name: slide-in-nav;
+        animation-duration: $duration-fastest;
+        animation-iteration-count:1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: slide-in-nav;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-duration: $duration-fastest;
+        -webkit-animation-timing-function: ease-in;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .slide-2 {
+        animation-name: slide-in-nav;
+        animation-duration: $duration-fast;
+        animation-iteration-count:1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: slide-in-nav;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-duration: $duration-fast;
+        -webkit-animation-timing-function: ease-in;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .slide-3 {
+        animation-name: slide-in-nav;
+        animation-duration: $duration-medium;
+        animation-iteration-count:1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: slide-in-nav;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-duration: $duration-medium;
+        -webkit-animation-timing-function: ease-in;
+        margin-right: auto;
+        margin-left: auto;    
+    }
+    .slide-4 {
+        animation-name: slide-in-nav;
+        animation-duration: $duration-slow;
+        animation-iteration-count:1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: slide-in-nav;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-duration: $duration-slow;
+        -webkit-animation-timing-function: ease-in;
+        margin-right: auto;
+        margin-left: auto;   
+    }
+    .slide-5 {
+        animation-name: slide-in-nav;
+        animation-duration: $duration-slowest;
+        animation-iteration-count:1;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-name: slide-in-nav;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-duration: $duration-slowest;
+        -webkit-animation-timing-function: ease-in;
+        margin-right: auto;
+        margin-left: auto;      
+    }
+}
+
+@mixin kf-nav-slide {
+    @keyframes nav-slide {
+        0% {
+        opacity:0;
+        left:-500px;
+        }
+
+        100% {
+        opacity:1;
+        left:0px;
+        }
+    }    
+}

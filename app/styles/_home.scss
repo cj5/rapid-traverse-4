@@ -1,0 +1,614 @@
+body {
+    font-family: $main;
+    // background-color: purple;
+    // overflow-x: hidden; 
+}
+
+html { 
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+}
+
+.fade-in.slow {
+    animation-delay: 0.1s;
+}
+
+.fade-in.slower {
+    animation-delay: 0.175s;
+}
+
+.fade-in.slowerer{
+    animation-delay: 0.25s;
+}
+
+.fade-in.slowest {
+    animation-delay: 0.325s;
+}
+
+.bg-image {
+    background: url(../images/bg.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    // background-color: $dark-gray;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    float: left;
+    clear: left;
+    padding: 431px 0;
+}
+
+/* .bg-image-filter {
+    background-color: rgba(133,133,133,.7);
+    width: 100%;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    padding: 431px 0;
+} */
+
+.bg-color-filter {
+    background-color: rgba(95,184,161,0.80);
+    width: 100%;
+    padding: 431px 0;
+    top: 0;
+    position: fixed;
+}
+
+#navicon {
+    top: 25px;
+    right: 15px;
+    position: fixed;
+    width: 35px;
+    height: 25px;
+    z-index: 999999;
+    // margin: 50px auto;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    // overflow: hidden;
+    opacity: 1;
+    span {
+        display: block;
+        background: white;
+        width: 70%;
+        height: 2px;
+        position: absolute;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        left: 0;
+    }   
+}
+
+#navicon span:nth-child(1) {
+  top: 0px;
+}
+
+#navicon span:nth-child(2),#navicon span:nth-child(3) {
+  top: 7px;
+}
+
+#navicon span:nth-child(4) {
+  top: 14px;
+}
+
+#navicon.open span:nth-child(1) {
+  top: 14px;
+  width: 0%;
+  left: 50%;
+}
+
+#navicon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#navicon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#navicon.open span:nth-child(4) {
+  top: 14px;
+  width: 0%;
+  left: 50%;
+}
+
+/*
+.menu {
+    position: relative;
+    top: 0;
+    display: none;  
+    transition: all 0.2s ease-in-out;  
+    // @include slide-out-menu();
+    // @include kf-slide-out-menu();
+}
+
+// @include nav-slide();
+// @include kf-nav-slide();
+
+.menu.open {
+    // overflow-y: hidden;
+    // max-height: 500px;
+    // transition: all 0.3s ease-in-out;
+
+    // @include slide-in-menu();
+    // @include kf-slide-in-menu();
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 900;
+    transition: all 0.2s ease-in-out;
+    ul {
+        position: relative;
+        top: 47%;
+        transform: translateY(-50%);
+        z-index: 900;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin: 10px 10px;
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 40px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 600;
+                transition: all 0.2s ease-in-out;
+            }
+            a:hover {
+                color: $teal;
+            }
+        }    
+    } 
+}
+*/
+
+.menu {
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99999;
+    ul {
+        position: relative;
+        top: 47%;
+        transform: translateY(-50%);
+        z-index: 900;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 25px;
+        li {
+            display: block;
+            margin: 10px 10px;
+            // display: none;
+            a {
+                font-family: $secondary;
+                text-decoration: none;
+                color: transparent;
+                font-size: 30px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 600;
+                transition: all 0.3s ease-in-out;
+            }
+            // a:link, a:visited {
+            //     color: transparent;
+            // }
+            // a:hover {
+            //     clear: both;
+            // }    
+        } 
+    }
+}
+
+.menu.open {
+    background: rgba(0, 0, 0, 0.8);
+    display: block;
+    z-index: 99999;
+    li {
+        display: block;
+        a {
+
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+    }           
+}
+
+.title-wrapper {
+    // border: 2px solid white;
+    // border-radius: 35px;
+    width: 100%;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // position: relative;
+    // text-align: center;
+    // margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    // font-family: 'Oswald', sans-serif;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 60px;
+    z-index: 100;
+    padding: 0px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.nav {
+    display: none;
+}
+
+h2 {
+    font-family: $secondary;
+    text-align: center;
+    color: white;
+    margin: -8px 0 25px 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+
+// MUSIC & INSPIRATION SECTIONS
+
+#music-link, #inspiration-link {
+    position: relative;
+    width: 100%;
+    padding: 27px 25px;
+
+    .audio-controls-wrapper {
+        text-align: center;
+            h3 {
+                padding-left: 20px;
+                margin-top: 30px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+    }
+
+    audio {
+        width: 93%;
+        // background-color: gray;
+        // border-radius: 5px;
+    }
+
+    h3 {
+        padding-left: 20px;
+        margin-top: 40px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+    .music-song-title {
+        color: $teal;
+    }
+}
+
+#music-link {
+    background-color: $dark-gray;
+    h3 {
+        font-size: 16px;
+    }
+}
+
+#inspiration-link {
+    background-color: $med-gray;
+    font-size: 14px;
+    h3 {
+        font-size: 14px;
+    }
+}
+
+.white-text {
+    color: white;
+}
+
+// CONTACT SECTION
+
+#contact-link {
+    position: relative;
+    width: 100%;
+    background-color: #191919;
+    padding: 27px 25px;
+}
+
+.contact-wrapper {
+    width: 100%;
+    position: relative;
+    img {
+        width: 100px;
+        // border: 0px solid $teal;
+        // transition: border 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        // -webkit-transition: border 0.2s ease-in-out;
+        // -moz-transition: border 0.2s ease-in-out;
+        // -o-transition: border 0.2s ease-in-out;
+    
+        border-radius: 15px;
+        display: block;
+        margin: 15px auto;
+        opacity: 1.0;
+        // background-color: rgba(255,255,255,1);
+
+        // &:hover {
+        //     // border: 3px solid $teal;
+        //     opacity: 0.7;
+        //     // background-color: rgba(255,255,255,0.5);
+        //     transition: all 0.2s ease-in-out;
+        // }
+    }
+}
+
+// MEDIA QUERIES -------------------------------------
+
+// LARGE PHONE --------------------------------
+@media screen and (min-width: 350px) {
+    h1 {
+        padding: 0 25px;
+    }
+}    
+
+// SMALL TABLET -------------------------------
+@media screen and (min-width: 480px) {
+
+}
+
+// LARGE TABLET -------------------------------
+@media screen and (min-width: 768px) {
+    #navicon {
+        // display: none;
+        opacity: 0;
+    }
+
+    #navicon:hover {
+        // span:nth-child(1) {
+        //     top: -2px;
+        //     transition: all 0.2s ease-in-out;
+        // }
+        // span:nth-child(4) {
+        //     top: 24px;
+        //     transition: all 0.2s ease-in-out;
+        // }
+        span {
+            background-color: $teal;
+        }
+    } 
+
+    #navicon.open:hover {
+        span {
+            background-color: $teal;
+            transition: all 0.4s ease-in-out;
+
+        }
+        // span:nth-child(2) {
+        //     transform: rotate(50deg);
+
+        // }
+        // span:nth-child(3) {
+        //     transform: rotate(-50deg);
+        // }
+    }
+
+    #music-link, #inspiration-link {
+        audio {
+            width: 85%;
+        }
+    }
+
+    h1 {
+        font-size: 70px;
+    }    
+
+    .nav {
+        display: inherit;
+        ul {
+        position: relative;   
+        padding: 0;
+        margin-top: 30px;
+        }
+        li {
+            display: inline;
+            padding: 10px 0;
+        }    
+        a {
+            border: 1px solid white;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            font-family: $secondary;
+            color: #F2F2F2;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+        } 
+        a:hover {
+            color: $teal;
+            background-color: white;
+            // #C4C4C4
+        }   
+    }
+
+    .menu.open {
+        background: rgba(0, 0, 0, 0.8);
+        display: block;
+        z-index: 99999;
+        li {
+            display: block;
+            a {
+                color: white;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }           
+    }
+
+    h2 {
+        margin: 60px 0 45px 0;
+        font-size: 40px;
+    }
+
+    .contact-wrapper {
+        text-align: center;
+        margin: 100px 0;
+        img {
+            display: inline;
+            margin: 0 30px;
+            border-radius: 0;
+        }
+    }
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 70px;
+            margin-top: 60px;
+        }
+    }
+    .audio-controls-wrapper {
+        margin-bottom: 45px;
+    }
+    .menu.open ul li a {
+        font-size: 60px;
+    }
+    .img-wrap {
+        background-color: white;
+        display: inline-block;
+        width: 100px;
+        margin: 0 30px;
+        overflow: hidden;
+        border-radius: 0px;
+        img {
+            // border: 1px solid white;
+            position: relative;
+            left: -30px;
+            display: inline-block;
+            width: 100px;
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
+            margin: 0 30px;
+            border-radius: 0px;
+        }
+        &:hover {
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
+    img:hover, .img-wrap:hover img {
+        opacity: .65;
+        transition: all 0.2s ease-in-out;
+    }
+}    
+
+// SMALL LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 992px) {
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 175px;
+        }
+    }
+
+    #music-link, #inspiration-link {
+        audio {
+            width: 69%;
+        }
+    }
+
+    .nav {
+        a {
+            font-size: 20px;
+            margin: 0 30px;
+        }
+    }
+}       
+
+// MEDIUM LAPTOP/DESKTOP ----------------------
+@media screen and (min-width: 1200px) {
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 21%;
+        }
+    }
+
+    #music-link, #inspiration-link {
+        audio {
+            width: 60%;
+        }
+    }
+}           
+
+// LARGE LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1200px) {
+        #music-link, #inspiration-link {
+            h3 {
+                padding-left: 23%;
+            }
+        }
+    }           
+}      
+
+
+
+
+
+
