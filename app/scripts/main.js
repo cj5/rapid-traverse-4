@@ -17,6 +17,11 @@ $(document).ready(function(){
         }, 500);
         return false;
     });
+
+    var theHeight = $(window).height();
+    var theHtdiv2 = theHeight/2;
+    $('.bg-image').css('height', theHeight);
+    $('.bg-color-filter').css('height', theHeight);
     
     function updateContainer() {
         var theHeight = $(window).height();
